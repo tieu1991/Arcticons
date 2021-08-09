@@ -48,18 +48,6 @@ function search(){
   }
 }
 
-function toggleColor(){
-  if (this.getAttribute('data-colored')){
-    document.getElementsByClassName('tab')[0].style.display = 'none';
-    document.getElementsByClassName('tab')[1].style.display = 'grid';
-    this.removeAttribute('data-colored');
-  }else{
-    document.getElementsByClassName('tab')[1].style.display = 'none';
-    document.getElementsByClassName('tab')[0].style.display = 'grid';
-    this.dataset.colored = 'true';
-  }
-}
-
 function sortIcons(a, b){
   var nameA = a.getAttribute('drawable');
   var nameB = b.getAttribute('drawable');
@@ -79,7 +67,7 @@ function genImageGrid(){
   carrousel.innerHTML = '<h2>Latest icons</h2><div class="latest content"></div>';
   for (var i of latest){
     var im = document.createElement('img');
-    im.src = 'https://github.com/Donnnno/Arcticons/tree/main/icons/black/' + i.attributes.drawable.value + '.svg';
+    im.src = 'https://raw.githubusercontent.com/Donnnno/Arcticons/main/icons/black/' + i.attributes.drawable.value + '.svg';
     im.addEventListener('error', function(){this.src = this.src.replace('icons/black', 'todo');});
     im.alt = i.attributes.drawable.value;
     im.title = i.attributes.drawable.value;
@@ -89,39 +77,23 @@ function genImageGrid(){
   abst.parentNode.insertBefore(carrousel, abst.nextSibling);
   // Generate grid
   for (var i of docs.sort(sortIcons)){
-    // Chromatic
+    // Black
     var im = document.createElement('img');
     im.className = 'lazy';
     lazyImageObserver.observe(im);
     im.src = 'c.svg';
-    im.dataset.src = 'https://github.com/Donnnno/Arcticons/tree/main/icons/black/' + i.attributes.drawable.value + '.svg';
+    im.dataset.src = 'https://raw.githubusercontent.com/Donnnno/Arcticons/main/icons/black/' + i.attributes.drawable.value + '.svg';
     im.alt = i.attributes.drawable.value;
     im.title = i.attributes.drawable.value;
     im.addEventListener('click', openPopup);
     document.getElementsByClassName('tab')[0].appendChild(im);
-    // Monochromatic
-    im = document.createElement('img');
-    im.className = 'lazy';
-    lazyImageObserver.observe(im);
-    im.src = 'mc.svg';
-    im.dataset.src = 'https://github.com/Donnnno/Arcticons/tree/main/icons/white/' + i.attributes.drawable.value + '.svg';
-    im.alt = i.attributes.drawable.value;
-    im.title = i.attributes.drawable.value;
-    im.addEventListener('click', openPopup);
-    document.getElementsByClassName('tab')[1].appendChild(im);
   }
 }
 document.addEventListener("DOMContentLoaded", function(){
-  document.getElementById('colored').onclick = toggleColor;
   document.getElementsByClassName('tab')[1].style.display = 'none';
   document.getElementById('search').oninput = search;
-  //var b = new XMLHttpRequest();
-  //b.open('GET', 'https://gitlab.com/xphnx/ameixa/raw/website/newdrawable.xml');
-  //b.open('GET', 'newdrawable.xml');
-  //b.onload = genImageCarrousel;
-  //b.send();
   var a = new XMLHttpRequest();
-  a.open('GET', 'https://github.com/Donnnno/Arcticons/blob/main/app/src/main/assets/drawable.xml  ');
+  a.open('GET', 'drawable.xml  ');
   a.onload = genImageGrid;
   a.send();
 });
