@@ -120,14 +120,7 @@ public class SvgConverter {
         Document foregroundDocument = DocumentHelper.parseText(foregroundXmlContent);
         Element rootElement = foregroundDocument.getRootElement();
 
-        Document document = DocumentHelper.createDocument();
-        Element root = document.addElement("adaptive-icon")
-                .addAttribute("xmlns:android", "http://schemas.android.com/apk/res/android");
-        root.addElement("background")
-                .addAttribute("android:drawable", bg);
-        root.addElement("foreground").addElement("inset")
-                .addAttribute("android:inset", "25%")
-                .add(rootElement);
+        Document document = DocumentHelper.parseText(foregroundXmlContent);
         updateXmlPath(document, "android:strokeColor", fg);
         updateXmlPath(document, "android:fillColor", fg);
         updateXmlPath(document, "android:strokeWidth", px);
