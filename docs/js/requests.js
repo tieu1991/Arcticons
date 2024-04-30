@@ -1,9 +1,3 @@
-//Edit the following variables
-var RepoOwner = "Arcticons-Team";
-var RepoName = "Arcticons";
-var RepoBranch = "main";
-
-
 // Array of Link Images
 const imageNames = ['img/requests/google-play-store.svg', 'img/requests/f-droid.svg', 'img/requests/izzyondroid.svg', 'img/requests/galaxystore.svg', 'img/requests/search-globe.svg'];
 var appEntriesDataGlobal = []; // Store the original data for sorting
@@ -12,7 +6,7 @@ const batchSize = 50; // Number of rows to load at a time
 let startIndex = 0; // Start index for lazy loading
 let appEntriesData = []; // Store the original data for sorting
 // Global variables to track sorting column and direction
-let sortingColumnIndex = 2;
+let sortingColumnIndex = 3;
 let sortingDirection = 'desc';
 
 // Debounce function for search input
@@ -29,7 +23,7 @@ const debounce = (func, delay) => {
 };
 
 // Fetch and process data
-fetch(`https://raw.githubusercontent.com/${RepoOwner}/${RepoName}/${RepoBranch}/generated/requests.txt`)
+fetch(`assets/requests.txt`)
     .then(response => {
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -62,6 +56,7 @@ fetch(`https://raw.githubusercontent.com/${RepoOwner}/${RepoName}/${RepoBranch}/
             const appIcon = `<img src="${appIconPath}" alt="App Icon" style="width:50px;height:50px;">`;
             appEntriesData.push({
                 appName,
+                appIconPath,
                 appIcon,
                 appLinks,
                 requestedInfo,
@@ -73,7 +68,7 @@ fetch(`https://raw.githubusercontent.com/${RepoOwner}/${RepoName}/${RepoBranch}/
         appEntriesDataGlobal = appEntriesData;
 
         // Example usage:
-        fetch(`https://raw.githubusercontent.com/${RepoOwner}/${RepoName}/icon-requests/docs/assets/combined_appfilter.xml`)
+        fetch(`assets/combined_appfilter.xml`)
             .then(response => {
                 if (!response.ok) {
                     // If appfilter.xml cannot be loaded, render appEntriesData as is
@@ -111,7 +106,7 @@ const updatableButton = document.getElementById("updatable-button");
 // Add an event listener to the button
 updatableButton.addEventListener("click", function() {
     // Define the URL to redirect to
-    const updatableURL = `https://${RepoOwner}.github.io/${RepoName}/updatable.html`;
+    const updatableURL = `updatable.html`;
     // Redirect to the specified URL
     window.location.href = updatableURL;
 });
@@ -189,7 +184,6 @@ function clearTable() {
     }
 }
 
-// Function to render the table based on provided data
 function renderTable(data) {
     const table = document.getElementById("app-entries");
     data.forEach((entry, index) => {
@@ -202,12 +196,42 @@ function renderTable(data) {
         let cell6 = row.insertCell(5);
         index = index + startIndex;
         cell1.innerHTML = entry.appName;
-        cell2.innerHTML = entry.appIcon;
+        // Render the app icon as a clickable image
+        cell2.innerHTML = `<a href="#" class="icon-preview" data-index="${index}">${entry.appIcon}</a>`;
         cell3.innerHTML = entry.appLinks;
         cell4.innerHTML = entry.requestedInfo;
         cell5.innerHTML = entry.lastRequestedTime;
         cell6.innerHTML = `<button class="copy-button" onclick="copyToClipboard(${index})">Copy</button>`;
     });
+
+    // Add event listeners to the icon previews
+    const iconPreviews = document.querySelectorAll('.icon-preview');
+    iconPreviews.forEach(icon => {
+        icon.addEventListener('click', function(event) {
+            event.preventDefault();
+            const index = parseInt(this.getAttribute('data-index'));
+            const entry = appEntriesDataGlobal[index];
+            showIconPreview(entry.appIconPath);
+        });
+    });
+}
+
+function showIconPreview(iconSrc) {
+    const previewOverlay = document.getElementById('preview-overlay');
+    const previewImage = document.getElementById('preview-image');
+
+    // Set the preview image source to the clicked icon source
+    previewImage.src = iconSrc;
+
+    // Show the preview overlay
+    previewOverlay.style.display = 'block';
+    // Add click event listener to hide the preview when clicked on the overlay or close button
+previewOverlay.addEventListener('click', function(e) {
+    if (e.target === this || e.target.classList.contains('close-button')) {
+        // Hide the preview overlay
+        this.style.display = 'none';
+    }
+});
 }
 
 // Update the table with filtered or sorted data
