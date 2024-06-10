@@ -1,30 +1,87 @@
-<!-- Wallpapers -->
-<item component="ComponentInfo{com.microsoft.bing.wallpapers/com.microsoft.bing.wallpapers.MainActivity}" drawable="wallpapers"/>
+<!-- Loja Online Samsung -->
+<item component="ComponentInfo{com.samsung.shop/com.samsung.shop.MainActivity}" drawable="loja_online_samsung"/>
 
-<!-- Chess Club -->
-<item component="ComponentInfo{com.gamovation.chessclubpilot/com.unity3d.player.UnityPlayerActivity}" drawable="chess_club"/>
+<!-- Banco Galicia -->
+<item component="ComponentInfo{com.mosync.app_Banco_Galicia/ar.com.galicia.core.activities.SplashActivity}" drawable="banco_galicia"/>
 
-<!-- Games -->
-<item component="ComponentInfo{com.mobicel.rt/com.appnext.appnextfolder.ui.activities.launchers.FolderActivityLauncherGames}" drawable="games_3"/>
+<!-- Brainly -->
+<item component="ComponentInfo{co.brainly/co.brainly.feature.splash.impl.SplashActivity}" drawable="brainly"/>
 
-<!-- FR Legends -->
-<item component="ComponentInfo{com.fengiiley.frlegends/com.fengiiley.frlegends.UnityPlayerActivity}" drawable="fr_legends"/>
+<!-- Routinery -->
+<item component="ComponentInfo{com.alt.goodmorning/com.alt.goodmorning.MainActivityDefault}" drawable="routinery"/>
 
-<!-- Supreme Duelist Stickman -->
-<item component="ComponentInfo{com.Neurononfire.SupremeDuelist/com.unity3d.player.UnityPlayerActivity}" drawable="supreme_duelist_stickman_1"/>
+<!-- AyuGram -->
+<item component="ComponentInfo{com.radolyn.ayugram/com.exteragram.messenger.AyuGramNothing}" drawable="ayugram"/>
 
-<!-- Traffic Racer -->
-<item component="ComponentInfo{com.skgames.trafficracer/cn.releasedata.ReleaseDataActivity.SplashActivityKing}" drawable="traffic_racer"/>
+<!-- SoundHound -->
+<item component="ComponentInfo{com.melodis.midomiMusicIdentifier.freemium/com.melodis.midomiMusicIdentifier.appcommon.activity.SplashScreenActivity}" drawable="soundhound"/>
 
-<!-- Games -->
-<item component="ComponentInfo{com.mobicel.rt/com.mobicel.rt.Games_Widget}" drawable="games_1"/>
+<!-- Snapchat⚡ -->
+<item component="ComponentInfo{com.snapchat.android/com.snapchat.android.AiWaveAlias}" drawable="snapchat⚡"/>
 
-<!-- Solar Smash -->
-<item component="ComponentInfo{com.paradyme.solarsmash/com.google.android.archive.ReactivateActivity}" drawable="solar_smash_1"/>
+<!-- Cinemark Theatres -->
+<item component="ComponentInfo{com.cinemark.mobile/crc64687967b3ed425736.MainActivity}" drawable="cinemark_theatres"/>
 
-<!-- FR Legends -->
-<item component="ComponentInfo{com.fengiiley.frlegends/com.fiveplay.mod.RMS.Recovery}" drawable="fr_legends_1"/>
+<!-- Fit -->
+<item component="ComponentInfo{com.google.android.apps.fitness/com.google.android.archive.ReactivateActivity}" drawable="fit"/>
 
-<!-- Actualización de software -->
-<item component="ComponentInfo{com.hihonor.ouc/com.hihonor.android.hwouc.ui.activities.MainEntranceActivity}" drawable="actualizacion_de_software"/>
+<!-- Google News -->
+<item component="ComponentInfo{com.google.android.apps.magazines/com.google.android.archive.ReactivateActivity}" drawable="google_news"/>
+
+<!-- Amazon Pay -->
+<item component="ComponentInfo{in.amazon.mShop.android.shopping/com.amazon.mShop.amazonpay.AmazonPayHomeActivityAliasWoShortcuts}" drawable="amazon_pay"/>
+
+<!-- QR & Barcode Scanner -->
+<item component="ComponentInfo{com.gamma.scan/com.gamma.scan.SplashActivity}" drawable="qr_and_barcode_scanner"/>
+
+<!-- Horizon Emu -->
+<item component="ComponentInfo{com.antutu.ABenchMark/com.antutu.ABenchMark.MainActivity}" drawable="horizon_emu"/>
+
+<!-- Sound Meter -->
+<item component="ComponentInfo{com.gamebasic.decibel/com.gamebasic.decibel.DecibelActivi}" drawable="sound_meter_2"/>
+
+<!-- Killer Sudoku -->
+<item component="ComponentInfo{com.easybrain.killer.sudoku.free/com.easybrain.template.SplashActivity}" drawable="killer_sudoku"/>
+
+<!-- Shopee PH -->
+<item component="ComponentInfo{com.shopee.ph/com.shopee.MainActivity}" drawable="shopee_ph"/>
+
+<!-- 1Track -->
+<item component="ComponentInfo{one.track.app/com.onetrackapp.MainActivity}" drawable="_1track"/>
+
+<!-- MBWhatsApp -->
+<item component="ComponentInfo{com.mbwhatsapp/com.mbwhatsapp.Main}" drawable="mbwhatsapp"/>
+
+<!-- Wolfram Alpha -->
+<item component="ComponentInfo{com.wolfram.android.alpha/com.wolfram.android.alpha.activity.WolframAlphaActivity}" drawable="wolfram_alpha"/>
+
+<!-- exteraGram -->
+<item component="ComponentInfo{com.exteragram.messenger/com.exteragram.messenger.MonetIcon}" drawable="exteragram"/>
+
+<!-- Satispay -->
+<item component="ComponentInfo{com.satispay.customer/com.satispay.customer.home.SplashActivity}" drawable="satispay"/>
+
+<!-- Discover -->
+<item component="ComponentInfo{com.discoverfinancial.mobile/lf0af873a.e37dcd7f3.a55198c2f.x72a99b04}" drawable="discover_2"/>
+
+<!-- GeeksforGeeks -->
+<item component="ComponentInfo{free.programming.programming/free.programming.programming.MainActivityNew}" drawable="geeksforgeeks"/>
+
+<!-- Clock -->
+<item component="ComponentInfo{com.best.deskclock/com.best.deskclock.FirstLaunch}" drawable="clock_1"/>
+
+<!-- Dutch Bros™ -->
+<item component="ComponentInfo{com.dutchbros.loyalty/com.dutchbros.loyalty.dutch_bros_forge.MainActivity}" drawable="dutch_bros™"/>
+
+<!-- Sajda -->
+<item component="ComponentInfo{com.raimbekov.android.sajde/com.raimbekov.android.sajde.DefaultIcon}" drawable="sajda"/>
+
+<!-- Railcard -->
+<item component="ComponentInfo{com.raildeliverygroup.railcard/com.raildeliverygroup.railcard.MainActivity}" drawable="railcard"/>
+
+<!-- Nykaa -->
+<item component="ComponentInfo{com.fsn.nykaa/com.fsn.nykaa.SplashScreenActivityV2}" drawable="nykaa"/>
+
+<!-- Home -->
+<item component="ComponentInfo{com.google.android.apps.chromecast.app/com.google.android.archive.ReactivateActivity}" drawable="home"/>
 
